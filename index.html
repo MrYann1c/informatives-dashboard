@@ -13,14 +13,17 @@
         <div class="function-container" style="justify-content: right;">
             <div class="function-inner">
                 <h1 class="function-title">Wetterprognose</h1>
-                <div style="float: left; width: 5em;">
-                    <h2 class="location">Zürich</h2>
-                    <span class="temp">8°</span>
+                <div id="weather">
+
                 </div>
-                <div>
-                    <div class="weather-icon"><img src="img/04d.svg" alt=""></div>
-                    <p class="description">Description</p>
-                </div>
+                <!-- <div style="float: left; width: 5em;" id="wetter"> -->
+                    <!-- <h2 id="location"><span id="location-code"></span></h2>
+                    <span class="temp"></span> -->
+                <!-- </div> -->
+                <!-- <div> -->
+                    <!-- <div class="weather-icon"><img src="img/04d.svg" alt=""></div>
+                    <p class="description"></p> -->
+                <!-- </div> -->
             </div>
         </div>
         <div class="function-container" style="justify-content: right;">
@@ -40,9 +43,11 @@
     </section>
     <footer>
         <div>
-            <h2 id="clock">00:00:00</h2>
+            <h2 id="clock" onload="ticken()"></h2>
             <p>Informatives Dashboard - Bbc Zürich</p>
         </div>
     </footer>
 </body>
+<script src="js/weather.js"></script>
+<script src="js/clock.js"></script>
 </html>
