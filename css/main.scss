@@ -63,7 +63,7 @@ section:nth-of-type(1) .function-inner {
 
 // Newsticker Section
 section:nth-of-type(2) .function-inner {
-    width: 20em;
+    width: 35em;
     height: 50vh;
 }
 
@@ -85,4 +85,25 @@ section:nth-of-type(2) .function-inner {
 .description {
     margin: 0;
     margin-left: 5em;
+}
+
+// Footer
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+footer > div > p,h2 {
+    margin: 0;
+}
+#clock {
+    margin: 0 auto 0 auto;
 }
