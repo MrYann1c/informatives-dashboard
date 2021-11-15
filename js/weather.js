@@ -1,4 +1,4 @@
-const url = `https://api.openweathermap.org/data/2.5/weather?q=zürich&appid=00f2b6ac0fa1f49e57e3fea6384f3f79&units=metric`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=zurich&appid=00f2b6ac0fa1f49e57e3fea6384f3f79&units=metric`;
 
 wetter = document.getElementById("weather");
 
@@ -11,7 +11,6 @@ fetch(url)
     // }.svg`;
 
     const div = document.createElement("div");
-    // li.classList.add("city");
     const markup = `
     <div class="weather1">
       <h2 class="location">${name}<sup class="location-code">${sys.country}</sup></h2>
@@ -22,6 +21,8 @@ fetch(url)
       <p class="description">${weather[0]["description"]}</p>
     </div>
     `;
+    // if (${weather[0]["description"]} = "")
+
     div.innerHTML = markup;
     wetter.appendChild(div);
   });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="css/dist/main.css">
     <title>Informatives Dashboard</title>
 </head>
-<body>
-    <section>
+<body id="body">
+    <header>
+        <img id="logo" src="img/bbc-logo.svg" alt="bbc-logo">
+    </header>
+    <section class="section">
         <img class="square-big" src="img/cut_spacesquare-big.png" alt="SpaceSquare1">
         <div class="function-container" style="justify-content: right;">
             <div class="function-inner">
@@ -16,38 +19,40 @@
                 <div id="weather">
 
                 </div>
-                <!-- <div style="float: left; width: 5em;" id="wetter"> -->
-                    <!-- <h2 id="location"><span id="location-code"></span></h2>
-                    <span class="temp"></span> -->
-                <!-- </div> -->
-                <!-- <div> -->
-                    <!-- <div class="weather-icon"><img src="img/04d.svg" alt=""></div>
-                    <p class="description"></p> -->
-                <!-- </div> -->
             </div>
         </div>
         <div class="function-container" style="justify-content: right;">
             <div class="function-inner">
                 <h1 class="function-title">Daily Reminder</h1>
-                <p>Hallo</p>
+                <p id="reminder"></p>
             </div>
         </div>
     </section>
-    <section>
+    <section class="section">
         <img class="square-small" src="img/SpaceSquare-small.png" alt="SpaceSquare2">
         <div class="function-container">
             <div class="function-inner">
                 <h1 class="function-title">Newsticker</h1>
+                <div id="news">
+
+                </div>
             </div>
         </div>
     </section>
-    <footer>
-        <div>
+    <footer id="footer">
+        <div id="center">
+            <button id="refresh-btn" onClick="window.location.reload();">&#x21bb</button>
             <h2 id="clock" onload="ticken()"></h2>
             <p>Informatives Dashboard - Bbc Zürich</p>
+        </div>
+        <div id="right">
+            <button class="darkmode-btn" onClick="PreDark()">Dark Mode <span id="darkmode-status">OFF</span></button>
+            <a class="impressum-btn" href="impressum.html">Impressum</a>
         </div>
     </footer>
 </body>
 <script src="js/weather.js"></script>
 <script src="js/clock.js"></script>
+<script src="js/darkmode.js"></script>
+<script src="js/newsticker.js"></script>
 </html>

@@ -1,45 +1,71 @@
+// Font (Titillium)
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
-// $backgroundColorDark: #565656;
+// Variables
 $backgroundColor: #FFFFFF;
 $textColor: #565656;
 $titleColor: #009EE3;
 
+$titleSize: 40px;
+
+$newsTitleSize: 22px;
+$newsTextSize: 17px;
+
+
 
 body, html {
-    margin: 0; 
+    margin: 0;
     padding: 0;
     user-select: none;
     font-family: 'Titillium Web', sans-serif;
     overflow: hidden;
+    color: $textColor;
+    background-color: $backgroundColor;
+    transition: 200ms;
 }
+
+// ------
+// Header
+header {
+    height: 12em;
+    transition: 200ms;
+}
+header > img {
+    width: 70px;
+    padding: 70px;
+}
+
+// ------------------------
+// Main Sections and Layout
 section:nth-of-type(1) {
     float: left;
-    width: 35%;
-    height: 50%;
-    margin-top: 10em;
+    width: 40vw;
+    height: 100%;
     background-color: $backgroundColor;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 200ms;
 }
 section:nth-of-type(2) {
     float: right;
-    width: 65%;
-    margin-top: 10em;
-    height: 50%;
+    width: 60vw;
+    height: 100%;
     background-color: $backgroundColor;
     display: flex;
     justify-content: center;
     align-items: top;
+    transition: 200ms;
 }
 .square-big {
+    z-index: 100;
     position: absolute;
     bottom: 0;
     left: 0;
 }
 .square-small {
+    z-index: 100;
     position: absolute;
     right: -8em;
     top: -7em;
@@ -53,23 +79,25 @@ section:nth-of-type(2) {
 }
 .function-title {
     color: $titleColor;
-    font-size: 40px;
+    font-size: $titleSize;
+    margin: 0 0 20px 0;
 }
-
-
+// Weather & Reminder Inner-Section
 section:nth-of-type(1) .function-inner {
     width: 20em;
     height: 25vh;
+    color: $textColor;
+    transition: 200ms;
 }
-
-// Newsticker Section
+// Newsticker Inner-Section
 section:nth-of-type(2) .function-inner {
     width: 35em;
-    height: 50vh;
+    height: 70vh;
+    color: $textColor;
+    transition: 200ms;
 }
 
-
-
+// --------------
 // Wetterprognose
 .location {
     padding: 0;
@@ -105,32 +133,114 @@ li {
     width: 5em;
 }
 .weather2 {
-    // width: 3em;
-    // width: 10em;
-    // padding-left: 200px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-// Footer
+// --------------
+// Daily Reminder
+#reminder {
+    font-size: 20px;
+}
+
+// ----------
+// Newsticker
+.news-title {
+    font-size: 22px;
+}
+.news-pub-title {
+    font-size: 16px;
+    margin: 0;
+    color: #AF1280;
+}
+.news-text {
+    margin: 0 0 10px 0;
+    font-size: 18px; 
+}
+
+// -------------------------------------
+// Footer | Uhrzeit, Refresh & Dark Mode
 footer {
     position: absolute;
     bottom: 0;
     display: flex;
     justify-content: center;
     width: 100%;
+    transition: 200ms;
 }
-footer > div {
+footer > #center {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
-footer > div > p,h2 {
-    margin: 0;
+footer > #right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
-#clock {
+footer > * > p,h2,button,a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+}
+#refresh-btn {
+    cursor: pointer;
+    font-size: 30px;
+    color: #AF1280;
     margin: 0 auto 0 auto;
+    margin-bottom: -5px;
+    transform: rotate(45deg);
+}
+
+// Uhrzeit
+#clock {
+    font-size: 30px;
+    margin: 0 auto 0 auto;
+    margin-bottom: -5px;
+}
+#sec {
+    font-weight: 200;
+}
+
+// Buttons DarkMode / Impressum
+.darkmode-btn {
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #AF1280;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+#darkmode-status {
+    color: red;
+    font-weight: bold;
+}
+.impressum-btn {
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #AF1280;
+    color: white;
+}
+
+// ---------------------------------
+// Media queries (Responsive design)
+@media screen and (max-width: 1320px) {
+    section:nth-of-type(1) {
+        width: 50vw;
+    }
+    section:nth-of-type(2) {
+        width: 40vw;
+    }
+    
 }
