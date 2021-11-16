@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="function-container" style="justify-content: right;">
-            <div class="function-inner">
+            <div class="function-inner" style="z-index: 1;">
                 <h1 class="function-title">Daily Reminder</h1>
                 <p id="reminder"></p>
             </div>
@@ -46,8 +46,8 @@
             <p>Informatives Dashboard - Bbc Zürich</p>
         </div>
         <div id="right">
-            <button class="darkmode-btn" onClick="PreDark()">Dark Mode <span id="darkmode-status">OFF</span></button>
-            <a class="impressum-btn" href="impressum.html">Impressum</a>
+            <button class="darkmode-btn" onClick="Check()">Dark Mode <span id="darkmode-status">OFF</span></button>
+            <button class="impressum-btn" onclick="window.location.href='impressum.html';">Impressum</button>
         </div>
     </footer>
 </body>

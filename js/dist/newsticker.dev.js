@@ -28,6 +28,7 @@ req.onreadystatechange = function () {
       h3.appendChild(document.createTextNode(pubDate.textContent));
       p.appendChild(document.createTextNode(description.textContent)); // Add classes
 
+      div.classList.add('news-container');
       h2.classList.add("news-title");
       h3.classList.add("news-pub-title");
       p.classList.add("news-text"); // Append to DIV

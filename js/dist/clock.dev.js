@@ -1,8 +1,7 @@
 "use strict";
 
 function ticken() {
-  uhr = document.getElementById("clock"); // sec = document.getElementById("sec");
-
+  uhr = document.getElementById("clock");
   daily = document.getElementById("reminder");
   var stunden, minuten, sekunden;
   var StundenZahl, MinutenZahl, SekundenZahl;
@@ -14,7 +13,7 @@ function ticken() {
   stunden = StundenZahl + ":";
 
   if (MinutenZahl < 10) {
-    minuten = "0" + MinutenZahl + ":";
+    minuten = "0" + MinutenZahl + "";
   } else {
     minuten = MinutenZahl + ":";
   }
@@ -22,7 +21,7 @@ function ticken() {
   if (SekundenZahl < 10) {
     sekunden = "0" + SekundenZahl + " ";
   } else {
-    sekunden = SekundenZahl + " ";
+    sekunden = ":" + SekundenZahl + " ";
   }
 
   sekunden = "<span id='sec'>" + sekunden + "</span>";

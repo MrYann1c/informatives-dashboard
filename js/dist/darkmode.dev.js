@@ -1,28 +1,24 @@
 "use strict";
 
-function PreDark() {
+function Check() {
   var status = document.getElementById("darkmode-status");
 
-  if (status.innerHTML == "OFF") {
-    // Set localStorage to stay in DarkMode & Check
-    status.innerHTML = "ON";
-    status.style.color = "lightgreen";
-    DarkMode();
-  } else if (window.localStorage.getItem('DarkMode') != null) {
-    // Clear localStorage
-    status.innerHTML = "ON";
-    status.style.color = "lightgreen";
-    DarkMode();
-  } else if (status.innerHTML == "ON" || window.localStorage.getItem('DarkMode') == null) {
-    window.localStorage.clear();
+  if (status.innerHTML == "ON") {
     status.innerHTML = "OFF";
     status.style.color = "red";
+    localStorage.clear();
+    DarkMode();
+  } else {
+    status.innerHTML = "ON";
+    status.style.color = "lightgreen";
+    localStorage.setItem('DarkMode', 'True');
     DarkMode();
   }
 }
 
 function DarkMode() {
   // Select elements
+  var status = document.getElementById("darkmode-status");
   var html = document.getElementById("html");
   var body = document.getElementById("body");
   var section = document.querySelectorAll(".section");
@@ -31,7 +27,9 @@ function DarkMode() {
   var logo = document.getElementById("logo"); // ----- DARKMODE -----
 
   if (localStorage.getItem('DarkMode') != null) {
-    // Background color
+    status.innerHTML = "ON";
+    status.style.color = "lightgreen"; // Background color
+
     html.style.backgroundColor = "#565656";
     body.style.backgroundColor = "#565656";
     footer.style.backgroundColor = "#565656";
@@ -50,8 +48,7 @@ function DarkMode() {
     } // ----- LIGHTMODE -----
 
   } else {
-    window.localStorage.clear(); // Background color
-
+    // Background color
     html.style.backgroundColor = "#FFFFFF";
     body.style.backgroundColor = "#FFFFFF";
     footer.style.backgroundColor = "#FFFFFF";
@@ -69,4 +66,10 @@ function DarkMode() {
       innersec[i].style.color = "#565656";
     }
   }
-} // PreDark();
+}
+
+if (localStorage.getItem('DarkMode') != null) {
+  DarkMode();
+} else {
+  localStorage.clear();
+}

@@ -1,6 +1,5 @@
 function ticken() {
     uhr = document.getElementById("clock");
-    // sec = document.getElementById("sec");
     daily = document.getElementById("reminder");
 
     var stunden, minuten, sekunden;
