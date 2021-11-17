@@ -101,13 +101,13 @@ section:nth-of-type(2) .function-inner {
 }
 
 .temp {
-  font-size: 50px;
+  font-size: 55px;
   padding: 0;
-  margin: 0;
+  margin: 15px 0 0 0;
 }
 
 .weather-icon {
-  width: 80px;
+  width: 100px;
 }
 
 .description {

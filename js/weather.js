@@ -1,14 +1,13 @@
 const url = `https://api.openweathermap.org/data/2.5/weather?q=zurich&appid=00f2b6ac0fa1f49e57e3fea6384f3f79&units=metric`;
-
 wetter = document.getElementById("weather");
 
 fetch(url)
   .then(response => response.json())
   .then(data => {
     const { main, name, sys, weather } = data;
-    // const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
-    //   weather[0]["icon"]
-    // }.svg`;
+    const icon = `http://openweathermap.org/img/wn/${
+      weather[0]["icon"]
+    }@2x.png`;
 
     const div = document.createElement("div");
     const markup = `
@@ -17,12 +16,10 @@ fetch(url)
       <div class="temp">${Math.round(main.temp)}°</div>
     </div>
     <div class="weather2">
-      <img src="img/04d.svg" class="weather-icon" alt="Weather Icon">
+        <img src="${icon}" class="weather-icon" alt="Weather Icon">
       <p class="description">${weather[0]["description"]}</p>
     </div>
     `;
-    // if (${weather[0]["description"]} = "")
-
     div.innerHTML = markup;
     wetter.appendChild(div);
   });

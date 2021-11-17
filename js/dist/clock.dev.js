@@ -13,7 +13,7 @@ function ticken() {
   stunden = StundenZahl + ":";
 
   if (MinutenZahl < 10) {
-    minuten = "0" + MinutenZahl + "";
+    minuten = "0" + MinutenZahl + ":";
   } else {
     minuten = MinutenZahl + ":";
   }
@@ -21,14 +21,14 @@ function ticken() {
   if (SekundenZahl < 10) {
     sekunden = "0" + SekundenZahl + " ";
   } else {
-    sekunden = ":" + SekundenZahl + " ";
+    sekunden = SekundenZahl + " ";
   }
 
   sekunden = "<span id='sec'>" + sekunden + "</span>";
   zeit = stunden + minuten + sekunden;
   uhr.innerHTML = zeit; // Daily Reminders
 
-  if (zeit > "15:45:00") {
+  if (zeit > "15:45:00" && zeit < "6:00") {
     $reminder = "Zeiterfassung und Wordpress erledigen!";
     daily.innerHTML = $reminder;
   } else if (zeit > "13:00:00" && zeit < "15:45:00") {

@@ -21,7 +21,7 @@ function ticken() {
     uhr.innerHTML = zeit;
 
     // Daily Reminders
-    if (zeit > "15:45:00") {
+    if (zeit > "15:45:00" && zeit < "6:00") {
         $reminder = "Zeiterfassung und Wordpress erledigen!";
         daily.innerHTML = $reminder;
     } else if (zeit > "13:00:00" && zeit < "15:45:00") {
