@@ -23,6 +23,7 @@ function DarkMode() {
   var body = document.getElementById("body");
   var section = document.querySelectorAll(".section");
   var innersec = document.querySelectorAll(".function-inner");
+  var pubTitle = document.querySelectorAll(".news-pub-title");
   var footer = document.getElementById("footer");
   var logo = document.getElementById("logo"); // ----- DARKMODE -----
 
